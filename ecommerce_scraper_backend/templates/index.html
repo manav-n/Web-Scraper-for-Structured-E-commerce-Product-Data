@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraper App</title>
+</head>
+<body>
+    <h1>E-Commerce Scraper</h1>
+    <form id="scrapeForm">
+        <label for="platform">Platform:</label>
+        <select id="platform" name="platform">
+            <option value="amazon">Amazon</option>
+            <option value="flipkart">Flipkart</option>
+            <option value="myntra">Myntra</option>
+            <option value="ajio">Ajio</option>
+        </select>
+        <br>
+        <label for="search_term">Search Term:</label>
+        <input type="text" id="search_term" name="search_term" required>
+        <br>
+        <button type="submit">Start Scraping</button>
+    </form>
+    <div id="output"></div>
+    <script>
+        document.getElementById('scrapeForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const platform = document.getElementById('platform').value;
+            const search_term = document.getElementById('search_term').value;
+
+            const response = await fetch('/start_scraping', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ platform, search_term }),
+            });
+
+            if (response.ok) {
+                const interval = setInterval(async () => {
+                    const outputResponse = await fetch('/get_output');
+                    const outputData = await outputResponse.json();
+                    if (outputData.output) {
+                        document.getElementById('output').innerText += outputData.output + '\n';
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

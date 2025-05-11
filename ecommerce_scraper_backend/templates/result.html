@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraping Results</title>
+</head>
+<body>
+    <h1>Scraping Results</h1>
+    <div>
+        <h2>Word Cloud</h2>
+        <img src="{{ url_for('static', filename='wordcloud.png') }}" alt="Word Cloud">
+    </div>
+    <div>
+        <h2>Price Distribution</h2>
+        <img src="{{ url_for('static', filename='price_distribution.png') }}" alt="Price Distribution">
+    </div>
+    <div>
+        <h2>Price vs Ratings</h2>
+        <img src="{{ url_for('static', filename='price_vs_ratings.png') }}" alt="Price vs Ratings">
+    </div>
+</body>
+</html>

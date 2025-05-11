@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "./static/css/main.f5651f2f.css",
+    "main.js": "./static/js/main.46e03c96.js",
+    "static/media/flipkart-logo.png": "./static/media/flipkart-logo.1c3afd3aaa169bcc5f17.png",
+    "static/media/amazon-logo.png": "./static/media/amazon-logo.81f6f31e9a58e1bd09e5.png",
+    "static/media/e-commerce scraper logo.png": "./static/media/e-commerce scraper logo.337df0f2632e4b873d74.png",
+    "static/media/myntra-logo.png": "./static/media/myntra-logo.5b5bc87ac3f76c57fc42.png",
+    "index.html": "./index.html",
+    "main.f5651f2f.css.map": "./static/css/main.f5651f2f.css.map",
+    "main.46e03c96.js.map": "./static/js/main.46e03c96.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5651f2f.css",
+    "static/js/main.46e03c96.js"
+  ]
+}
